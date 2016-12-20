@@ -69,6 +69,7 @@ status.register("pulseaudio",
                 format_muted=" {volume}"
 )
 
+# this is weird but xbacklight does not work for me.
 class MyBacklight(IntervalModule):
 
     settings = (
