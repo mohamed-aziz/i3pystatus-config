@@ -40,5 +40,7 @@ Oh and excuse the floating I just wanted to show my background.
 		some stuff
 		status_command python ~/i3pyconfig/statusconfig.py
 	}
+6) I also set up a systemd daemon for my emacs daemon mode, the code is from the [emacswiki](https://www.emacswiki.org/emacs/EmacsAsDaemon#toc8)
+
 
 Now restart your i3 and the changes should take effect.
