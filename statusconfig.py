@@ -3,17 +3,17 @@
 
 VENV_PATH = '/home/mohamed/vEnvs/i3PyHacking/bin/activate_this.py'
 exec(
-    compile(open(VENV_PATH, 'r').read(), VENV_PATH, 'exec'),{
+    compile(open(VENV_PATH, 'r').read(), VENV_PATH, 'exec'), {
         '__file__': VENV_PATH,
         '__name__': '__main__'
     }
 )
 
 
-from i3pystatus import Status
-from i3pystatus.core.command import run_through_shell
-from i3pystatus import IntervalModule
-from shutil import which
+from i3pystatus import Status # noqa
+from i3pystatus.core.command import run_through_shell # noqa
+from i3pystatus import IntervalModule # noqa
+from shutil import which # noqa
 status = Status()
 
 # Displays clock like this:
@@ -37,14 +37,14 @@ status.register("load")
 # If you don't have a desktop notification demon yet, take a look at dunst:
 #   http://www.knopwob.org/dunst/
 status.register("battery",
-    format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
-    alert=True,
-    alert_percentage=5,
-    status={
-        "DIS": "\u2193",
-        "CHR": "\u2191",
-        "FULL": "=",
-    },)
+                format="{status}/{consumption:.2f}W {percentage:.2f}% {remaining:%E%hh:%Mm}",
+                alert=True,
+                alert_percentage=5,
+                status={
+                    "DIS": "\u2193",
+                    "CHR": "\u2191",
+                    "FULL": "=",
+                },)
 
 # Shows the address and up/down state of eth0. If it is up the address is shown in
 # green (the default value of color_up) and the CIDR-address is shown
@@ -65,29 +65,26 @@ status.register("network",
 # Shows pulseaudio default sink volume
 status.register("pulseaudio",
                 format=" {volume}",
-                format_muted=" {volume}"
-)
-
-
+                format_muted=" {volume}")
 
 status.register(
     "backlight_light",
     format='{icon}  {percentage}{symbole}',
     step=5,
-    icon='',
-)
+    icon='',)
 
 
 status.register(
     "mpd",
-    format="{title} {status}"
-)
+    format="{title} {status}")
 
 
 status.register(
-    "pomodoro",
-    sound="/home/mohamed/i3pyconfig/beep.ogg",
-)
+    "uname",
+    format=" {sysname} {release} {machine}")
 
+status.register(
+    "emacs_service",
+    format="Emacs is {status}")
 
 status.run()
