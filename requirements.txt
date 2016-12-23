@@ -1,4 +1,4 @@
 basiciw==0.2.2
 colour==0.1.2
-i3pystatus==3.35
+git+https://github.com/mohamed-aziz/i3pystatus.git
 netifaces==0.10.5
